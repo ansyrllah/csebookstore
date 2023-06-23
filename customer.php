@@ -3,9 +3,9 @@
 	require_once "./template/header.php";
 ?>
 
-	<form class="form-horizontal" method="post" action="admin_verify.php">
+	<form class="form-horizontal" method="post" action="customer_verify.php">
 		<div class="form-group">
-			<label for="name" class="control-label col-md-4">Admin Name</label>
+			<label for="name" class="control-label col-md-4">Customer Name</label>
 			<div class="col-md-4">
 				<input type="text" name="name" class="form-control">
 			</div>

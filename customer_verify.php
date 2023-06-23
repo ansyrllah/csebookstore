@@ -20,7 +20,7 @@
 	// $pass = sha1($pass);
 
 	// get from db
-	$query = "SELECT name, pass from admin WHERE name = '$name' AND pass = '$pass'";
+	$query = "SELECT name, pass from customers WHERE name = '$name' AND pass = '$pass'";
 	$result = mysqli_query($conn, $query);
 	if(!$result){
 		echo "Empty data " . mysqli_error($conn);
@@ -28,21 +28,23 @@
 	}
 	$row = mysqli_fetch_assoc($result);
 
-	// echo "Percobaan 2: Sandi sengaja disalahkan";
 	if (!$row) {
 		echo "Name or pass is wrong. Check again!";
 		$_SESSION['admin'] = false;
 		exit;
 	}
-
-	// Pencocokan sandi dan pass tidak sesuai karena kalo sandinya salah, $row akan null
-	// if($name != $row['name'] && $pass != $row['pass']){
+	// if ($row) {
+	// 	if($name !== $row['name'] && $pass !== $row['pass']){
+	// 		echo "Name or pass is wrong. Check again! name: $name pass $pass";
+	// 		$_SESSION['customers'] = false;
+	// 		exit;
+	// 	}
 	// 	echo "Name or pass is wrong. Check again!";
-	// 	$_SESSION['admin'] = false;
+	// 	$_SESSION['customers'] = false;
 	// 	exit;
 	// }
 
 	if(isset($conn)) {mysqli_close($conn);}
-	$_SESSION['admin'] = true;
-	header("Location: admin_book.php");
+	$_SESSION['customers'] = true;
+	header("Location: books.php");
 ?>
