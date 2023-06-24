@@ -14,30 +14,30 @@
 		exit;
 	}
 
-	$title = "List Of Publishers";
+	$title = "Search Books";
 	require "./template/header.php";
 ?>
-	<p class="lead">List of Publisher</p>
-	<ul>
-	<?php 
-		while($row = mysqli_fetch_assoc($result)){
-			$count = 0; 
-			$query = "SELECT publisherid FROM books";
-			$result2 = mysqli_query($conn, $query);
-			if(!$result2){
-				echo "Can't retrieve data " . mysqli_error($conn);
-				exit;
-			}
-			while ($pubInBook = mysqli_fetch_assoc($result2)){
-				if($pubInBook['publisherid'] == $row['publisherid']){
-					$count++;
+			<p class="lead">List of Publisher</p>
+			<ul>
+			<?php 
+			while($row = mysqli_fetch_assoc($result)){
+				$count = 0; 
+				$query = "SELECT publisherid FROM books";
+				$result2 = mysqli_query($conn, $query);
+				if(!$result2){
+					echo "Can't retrieve data " . mysqli_error($conn);
+					exit;
 				}
-			}
-	?>
-		<li>
-			<span class="badge"><?php echo $count; ?></span>
-		    <a href="bookPerPub.php?pubid=<?php echo $row['publisherid']; ?>"><?php echo $row['publisher_name']; ?></a>
-		</li>
+				while ($pubInBook = mysqli_fetch_assoc($result2)){
+					if($pubInBook['publisherid'] == $row['publisherid']){
+						$count++;
+					}
+				}
+			?>
+			<li>
+				<span class="badge"><?php echo $count; ?></span>
+				<a href="bookPerPub.php?pubid=<?php echo $row['publisherid']; ?>"><?php echo $row['publisher_name']; ?></a>
+			</li>
 	<?php } ?>
 		<li>
 			<a href="books.php">List full of books</a>

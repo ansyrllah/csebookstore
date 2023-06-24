@@ -1,5 +1,5 @@
 <?php
-	$title = "Administration section";
+	$title = "Customer Login";
 	require_once "./template/header.php";
 ?>
 

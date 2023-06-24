@@ -3,7 +3,7 @@
   $count = 0;
   // connecto database
   
-  $title = "Index";
+  $title = "Homepage";
   require_once "./template/header.php";
   require_once "./functions/database_functions.php";
   $conn = db_connect();
