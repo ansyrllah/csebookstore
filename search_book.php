@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
 			echo "</a>";
 			echo "<h4>" . $row['book_title'] . "</h4>";
 			echo "<p><strong>Author:</strong> " . $row['book_author'] . "</p>";
-			echo "<p><strong>Price:</strong> $" . $row['book_price'] . "</p>";
+			echo "<p><strong>Price:</strong> Rp. " . $row['book_price'] . "</p>";
 			echo "</div>";
 			echo "</div>";
 
@@ -61,9 +61,9 @@ if (isset($_POST['submit'])) {
 			echo "</div>";
 		}
 
-		if (isset($conn)) {
-			mysqli_close($conn);
-		}
+		// if (isset($conn)) {
+		// 	mysqli_close($conn);
+		// }
 	} else {
 		echo "Book Title is empty!";
 	}
