@@ -2,7 +2,7 @@
 session_start();
 require_once "./functions/admin.php";
 $title = "Add new book";
-require "./template/header.php";
+require "./template/header_admin.php";
 require "./functions/database_functions.php";
 $conn = db_connect();
 
@@ -63,6 +63,9 @@ if(isset($_POST['add'])){
     }
 }
 ?>
+
+<h1>Add New Book</h1>
+<p>Please fill in all the forms below</p>
 <form method="post" action="admin_add.php" enctype="multipart/form-data">
     <table class="table">
         <tr>
