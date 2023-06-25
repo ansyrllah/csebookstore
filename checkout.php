@@ -51,20 +51,20 @@
 		</tr>
 	</table>
 	
-	<div class="col">
-
+	<!-- <div class="col">
 		<h1>Delivery Details</h1>
 		<ul class="list-group list-group-flush">
 			<li class="list-group-item col"><?php echo $qty; ?></li>
-			<!-- <li class="list-group-item col"><?php echo "Rp. " . $customer['name']; ?></li> -->
+			<li class="list-group-item col"><?php echo "Rp. " . $customer['name']; ?></li>
 			<li class="list-group-item col">1</li>
 			<li class="list-group-item col">1</li>
 			<li class="list-group-item col">1</li>
 		</ul>
-	</div>
+	</div> -->
 
 	<div class="col">
 		<h1>Delivery Details</h1>
+		<p>Fill in this form according to your data</p>
 		<form method="post" action="purchase.php" class="form-horizontal">
 			<?php if(isset($_SESSION['err']) && $_SESSION['err'] == 1){ ?>
 				<p class="text-danger">All fields have to be filled</p>
