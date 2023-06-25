@@ -55,7 +55,7 @@
 			</tr>
 			<tr>
 				<th>Publisher</th>
-				<td><input type="text" name="publisher" value="<?php echo getPubName($conn, $row['publisherid']); ?>" required></td>
+				<td><input type="text" name="publisher" value="<?php echo $row['publisherid']; ?>" required></td>
 			</tr>
 		</table>
 		<input type="submit" name="save_change" value="Change" class="btn btn-primary">

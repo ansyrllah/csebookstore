@@ -9,8 +9,11 @@
   $conn = db_connect();
   $row = select4LatestBook($conn);
 ?>
+  <div class="text-center">
+    <a href="customer.php" class="btn btn-primary">Sign in</a>
+  </div>
       <!-- Example row of columns -->
-      <p class="lead text-center text-muted">Latest books</p>
+      <!-- <p class="lead text-center text-muted">Latest books</p>
       <div class="row">
         <?php foreach($row as $book) { ?>
       	<div class="col-md-3">
@@ -19,7 +22,7 @@
           </a>
       	</div>
         <?php } ?>
-      </div>
+      </div> -->
 <?php
   if(isset($conn)) {mysqli_close($conn);}
   require_once "./template/footer.php";

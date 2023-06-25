@@ -46,5 +46,5 @@
 
 	if(isset($conn)) {mysqli_close($conn);}
 	$_SESSION['customers'] = true;
-	header("Location: index.php");
+	header("Location: books.php");
 ?>

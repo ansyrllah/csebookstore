@@ -40,19 +40,18 @@
 
 	// take orderid from order to insert order items
 	$orderid = getOrderId($conn, $customerid);
-
 	foreach($_SESSION['cart'] as $isbn => $qty){
 		$bookprice = getbookprice($isbn);
 		$query = "INSERT INTO order_items VALUES 
 		('$orderid', '$isbn', '$bookprice', '$qty')";
 		$result = mysqli_query($conn, $query);
 		if(!$result){
-			echo "Insert value false!" . mysqli_error($conn2);
+			echo "Insert value false!" . mysqli_error($conn);
 			exit;
 		}
 	}
 
-	session_unset();
+	// session_unset();
 ?>
 	<p class="lead text-success">Your order has been processed sucessfully. Please check your email to get your order confirmation and shipping detail!. 
 	Your cart has been empty.</p>

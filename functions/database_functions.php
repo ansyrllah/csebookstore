@@ -31,6 +31,26 @@
 		}
 		return $result;
 	}
+	
+	function getCustomerByCustomerID($conn, $customerID){
+		$query = "SELECT customerid, name, address, city, zip_code, country FROM customers WHERE customer_id = '$customerID'";
+		$result = mysqli_query($conn, $query);
+		if(!$result){
+			echo "Can't retrieve data " . mysqli_error($conn);
+			exit;
+		}
+		return $result;
+	}
+	
+	function getCustomerByPassword($conn, $name, $password){
+		$query = "SELECT customerid, name, address, city, zip_code, country FROM customers WHERE customer_id = '$customerID'";
+		$result = mysqli_query($conn, $query);
+		if(!$result){
+			echo "Can't retrieve data " . mysqli_error($conn);
+			exit;
+		}
+		return $result;
+	}
 
 	function getOrderId($conn, $customerid){
 		$query = "SELECT orderid FROM orders WHERE customerid = '$customerid'";
@@ -44,8 +64,7 @@
 	}
 
 	function insertIntoOrder($conn, $customerid, $total_price, $date, $ship_name, $ship_address, $ship_city, $ship_zip_code, $ship_country){
-		$query = "INSERT INTO orders VALUES 
-		('', '" . $customerid . "', '" . $total_price . "', '" . $date . "', '" . $ship_name . "', '" . $ship_address . "', '" . $ship_city . "', '" . $ship_zip_code . "', '" . $ship_country . "')";
+		$query = "INSERT INTO orders (customerid, amount, date, ship_name, ship_address, ship_city, ship_zip_code, ship_country) VALUES ('" . $customerid . "', '" . $total_price . "', '" . $date . "', '" . $ship_name . "', '" . $ship_address . "', '" . $ship_city . "', '" . $ship_zip_code . "', '" . $ship_country . "')";
 		$result = mysqli_query($conn, $query);
 		if(!$result){
 			echo "Insert orders failed " . mysqli_error($conn);
@@ -79,8 +98,8 @@
 			$row = mysqli_fetch_assoc($result);
 			return $row['customerid'];
 		} else {
-			// return null;
-			return 1;
+			return null;
+			// return 1;
 		}
 	}
 

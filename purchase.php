@@ -42,28 +42,28 @@
 			?>
 		<tr>
 			<td><?php echo $book['book_title'] . " by " . $book['book_author']; ?></td>
-			<td><?php echo "$" . $book['book_price']; ?></td>
+			<td><?php echo "Rp. " . $book['book_price']; ?></td>
 			<td><?php echo $qty; ?></td>
-			<td><?php echo "$" . $qty * $book['book_price']; ?></td>
+			<td><?php echo "Rp. " . $qty * $book['book_price']; ?></td>
 		</tr>
 		<?php } ?>
 		<tr>
 			<th>&nbsp;</th>
 			<th>&nbsp;</th>
 			<th><?php echo $_SESSION['total_items']; ?></th>
-			<th><?php echo "$" . $_SESSION['total_price']; ?></th>
+			<th><?php echo "Rp. " . $_SESSION['total_price']; ?></th>
 		</tr>
 		<tr>
 			<td>Shipping</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
-			<td>20.00</td>
+			<td>Rp. 10000</td>
 		</tr>
 		<tr>
 			<th>Total Including Shipping</th>
 			<th>&nbsp;</th>
 			<th>&nbsp;</th>
-			<th><?php echo "$" . ($_SESSION['total_price'] + 20); ?></th>
+			<th><?php echo "Rp. " . ($_SESSION['total_price'] + 10000); ?></th>
 		</tr>
 	</table>
 	<form method="post" action="process.php" class="form-horizontal">
