@@ -19,7 +19,7 @@
 	}
 
 	if(isset($book_isbn)){
-		// new iem selected
+		// new item selected
 		if(!isset($_SESSION['cart'])){
 			// $_SESSION['cart'] is associative array that bookisbn => qty
 			$_SESSION['cart'] = array();
@@ -70,16 +70,16 @@
 			?>
 			<tr>
 				<td><?php echo $book['book_title'] . " by " . $book['book_author']; ?></td>
-				<td><?php echo "$" . $book['book_price']; ?></td>
+				<td><?php echo "Rp. " . $book['book_price']; ?></td>
 				<td><input type="text" value="<?php echo $qty; ?>" size="2" name="<?php echo $isbn; ?>"></td>
-				<td><?php echo "$" . $qty * $book['book_price']; ?></td>
+				<td><?php echo "Rp. " . $qty * $book['book_price']; ?></td>
 			</tr>
 			<?php } ?>
 		    <tr>
 		    	<th>&nbsp;</th>
 		    	<th>&nbsp;</th>
 		    	<th><?php echo $_SESSION['total_items']; ?></th>
-		    	<th><?php echo "$" . $_SESSION['total_price']; ?></th>
+		    	<th><?php echo "Rp. " . $_SESSION['total_price']; ?></th>
 		    </tr>
 	   	</table>
 	   	<input type="submit" class="btn btn-primary" name="save_change" value="Save Changes">
