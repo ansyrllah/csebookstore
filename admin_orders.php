@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require_once "./functions/admin.php";
-	$title = "List book";
+	$title = "Sales";
 	require_once "./template/header_admin.php";
 	require_once "./functions/database_functions.php";
 	$conn = db_connect();
@@ -24,7 +24,7 @@
 		</div>
 		<?php unset($_SESSION['error_message']); ?>
 	<?php } ?>
-	<h1>Manage your orders & payments</h1>
+	<h1>Manage your sales</h1>
 	<table class="table" style="margin-top: 20px">
 		<tr>
 			<th>Order ID</th>
