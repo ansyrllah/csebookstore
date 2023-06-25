@@ -33,16 +33,6 @@
 		$_SESSION['admin'] = false;
 		exit;
 	}
-	// if ($row) {
-	// 	if($name !== $row['name'] && $pass !== $row['pass']){
-	// 		echo "Name or pass is wrong. Check again! name: $name pass $pass";
-	// 		$_SESSION['customers'] = false;
-	// 		exit;
-	// 	}
-	// 	echo "Name or pass is wrong. Check again!";
-	// 	$_SESSION['customers'] = false;
-	// 	exit;
-	// }
 
 	if(isset($conn)) {mysqli_close($conn);}
 	$_SESSION['customers'] = true;
