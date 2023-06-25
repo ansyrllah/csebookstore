@@ -53,7 +53,13 @@
             ?>
             <tr>
               <td><?php echo $key; ?></td>
-              <td><?php echo $value; ?></td>
+              <td><?php
+                    if ($key === "Price") {
+                      echo "Rp. $value";
+                    } else {
+                      echo $value;
+                    }?></td>
+                     
             </tr>
             <?php 
               } 
