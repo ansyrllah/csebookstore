@@ -35,6 +35,8 @@
         <ul class="nav navbar-nav navbar-right">
           <!-- link to admin_add.php -->
           <li><a href="admin_add.php"><span class="glyphicon glyphicon-plus"></span>&nbsp; Add New Book</a></li>
+          <!-- link to admin_orders.php -->
+          <li><a href="admin_orders.php"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Manage Orders</a></li>
           <!-- link to admin_book.php -->
           <li><a href="admin_book.php"><span class="glyphicon glyphicon-book"></span>&nbsp; Manage Books</a></li>
           <!-- link to admin.php -->
